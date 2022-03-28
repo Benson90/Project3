@@ -11,6 +11,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+# lib
+
 ```{r lib}
 library(waterfalls)
 library(tidyverse)
@@ -54,9 +56,12 @@ select("Company","Queried_Salary","Location","Company_Revenue","Company_Employee
 
 ```
 ## Introduction: 
- My group consisted of me(Al),Benson and Jay Lee. Our group had found many data sets but ultimately we decided upon an Indeed data set that contains information about jobs posting from Indeed that contained information regarding which company were hiring for what roles,the salaries,and skills they are required to know.My role was to compare salaries by job-type and possibly job-title. 
- 
-## Including Plots
+ Our group had found many data sets but ultimately we decided upon an Indeed data set that contains information about jobs posting from Indeed that contained information regarding which company were hiring for what roles,the salaries,and skills they are required to know. 
+
+As we can see, more students including ourself are choosing computer science and statistics over other majors. And these two are the most important skill set for data scientist. have you ever think that if we make a right choice to get into MS data science program? How is the job market for data science related jobs? Benson and Al will help me to answer these questions and show us more insight about the job market.
+
+## Academic major trend
+
 ```{r college major}
 collegedata$Field.of.study <- as.character(str_replace_all(collegedata$Field.of.study,"[1-9]","")) 
 collegedata$Field.of.study <- as.character(str_replace_all(collegedata$Field.of.study,"[/]","")) 
@@ -100,9 +105,6 @@ rateofchange <- cbind(year,ComputerandInfoSciencesrate, Mathandstatisticsrate,Bu
 rateofchange
 ```
 
-You can also embed plots, for example:
-
-
 ## Skills Requirement 
 
 Based on the Indeed job posting from the Employer, the Employer is looking for an average of 3 related Data science skills for their open position. Also, Python and SQL are the most preferred for data science-related jobs. 
@@ -123,7 +125,11 @@ ggplot(data=skills, aes(x=value, y=reorder(type,value), fill=type))+
   xlab("Count") + ylab("Skill")
 
 ```
-## From the Related Data science job hiring by Industry chart, we can see the industry with high demand in data science positions: Consulting and Business Service, Internet and Software, Bank & Financial Service, and Health Care. While High competitive in Consulting and Business Service, Internet and Software, and Bank & Financial Service with the highest pay, Health Care and Education industries seem a better option for an entry-level position. In addition and not surprised, the Data science position is for high revenue company.
+
+## Industry need data
+
+From the Related Data science job hiring by Industry chart, we can see the industry with high demand in data science positions: Consulting and Business Service, Internet and Software, Bank & Financial Service, and Health Care. While High competitive in Consulting and Business Service, Internet and Software, and Bank & Financial Service with the highest pay, Health Care and Education industries seem a better option for an entry-level position. In addition and not surprised, the Data science position is for high revenue company.
+
 ```{r Company}
 
 
@@ -164,7 +170,10 @@ ggplot(data=industry_revenue, aes(y=Company_Revenue))+
   xlab("Count") + ylab("Company Revenue")
 
 ```
-```{r test}
+## career path
+We would like to know which career path might have the best salaries. And we found data scientist's salry is outstanding compare to data analyst and data engineer.
+
+```{r job title}
 ggplot(data=jobtable, aes(y=Queried_Salary))+
   geom_bar(colour="black") +
   ggtitle("Which job title got paid more....") +
@@ -264,4 +273,11 @@ ggplot(HighRange,aes(x=Company_Industry,y=No_of_Skills)) +
 In the high-range Salary range which is greater than 160K it seems the top industry to pay and demand the greatest skills to work in these industry is the Internet and Software industry followed by consulting and business services and banks and financial services. Makes sense since tech industries like Google,Facebook and other tech companies are able to hire more workers and earn a lot of money to be able to pay their employees in this high salary range. 
 
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Industry salary and skill relationship: 
+
+  Based on our findings has shown that for each salary range each industry demands a high number of knowledge of programming languages.For the salary range less than 80k, the education and schools industry demands a lot from its applicant requiring them to know many programming languages. While in the mid-range consumers and business services demand the most in their salary range.While finally, in the high-range the internet and software industry demands the most. 
+  
+  
+## Conclusion:
+
+ After all the findings from significant college trends, Company, Data Science Skills, Salary, Job posting, and Industry, we find more and more students taking data science-related higher education programs. Also, the Data related job demand is high in Consulting and Business Services, Internet and Software, Bank & Financial Services, and Health Care. Although the salary offered by the company is high, it requires many different skills to get into a data science role, primarily Consulting and Business Services and Internet Software. We believe that we made the right choice to enroll in this program to learn more skills and get into those 10 Billion revenue companies!!
