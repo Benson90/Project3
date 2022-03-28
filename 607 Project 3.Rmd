@@ -58,7 +58,7 @@ select("Company","Queried_Salary","Location","Company_Revenue","Company_Employee
 ## Introduction: 
  Our group had found many data sets but ultimately we decided upon an Indeed data set that contains information about jobs posting from Indeed that contained information regarding which company were hiring for what roles,the salaries,and skills they are required to know. 
 
-As we can see, more students including ourself are choosing computer science and statistics over other majors. And these two are the most important skill set for data scientist. have you ever think that if we make a right choice to get into MS data science program? How is the job market for data science related jobs? Benson and Al will help me to answer these questions and show us more insight about the job market.
+
 
 ## Academic major trend
 
@@ -104,6 +104,7 @@ rateofchange <- cbind(year,ComputerandInfoSciencesrate, Mathandstatisticsrate,Bu
 
 rateofchange
 ```
+As we can see, more students including ourself are choosing computer science and statistics over other majors. And these two are the most important skill set for data scientist. have you ever think that if we make a right choice to get into MS data science program? How is the job market for data science related jobs? Benson and Al will help me to answer these questions and show us more insight about the job market.
 
 ## Skills Requirement 
 
